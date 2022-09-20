@@ -5,13 +5,13 @@ import TopNav from '@/components/TopNav.vue'
 
 <template>
   <div>
-    <TopNav />
+    <TopNav :canToggleAside="false" />
     <div class="banner">
       <h1>CC UI</h1>
       <h2>基于 Vue3, 面向开发者的组件库</h2>
-      <div class="action">
-        <a href="">GitHub</a> |
-        <router-link to="/doc">start</router-link>
+      <div class="actions">
+        <a href="https://github.com/IfanTsai/vue-cc-ui">GitHub</a> |
+        <router-link to="/doc">Start</router-link>
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@ import TopNav from '@/components/TopNav.vue'
   flex-direction: column;
   background: lightgreen;
 
-  >.actions {
+  > .actions {
     padding: 8px 0;
 
     a {

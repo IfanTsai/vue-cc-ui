@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Doc from '../views/Doc.vue'
+import Home from '@/views/Home.vue'
+import Doc from '@/views/Doc.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +14,13 @@ const router = createRouter({
       path: '/doc',
       name: 'doc',
       component: Doc,
+      children: [
+        {
+          path: 'switch',
+          name: 'switch',
+          component: import('@/components/SwitchDemo.vue'),
+        },
+      ]
     }
   ]
 })
