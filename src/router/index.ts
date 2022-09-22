@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
     },
     {
       path: '/doc',
@@ -20,9 +20,14 @@ const router = createRouter({
           name: 'switch',
           component: import('@/components/SwitchDemo.vue'),
         },
-      ]
-    }
-  ]
+        {
+          path: 'button',
+          name: 'button',
+          component: import('@/components/ButtonDemo.vue'),
+        },
+      ],
+    },
+  ],
 })
 
 export default router
