@@ -25,6 +25,11 @@ const router = createRouter({
           name: 'button',
           component: import('@/components/ButtonDemo.vue'),
         },
+        {
+          path: 'dialog',
+          name: 'dialog',
+          component: import('@/components/DialogDemo.vue'),
+        },
       ],
     },
   ],

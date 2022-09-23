@@ -65,6 +65,7 @@ const asideVisiable = inject<Ref<boolean>>('asideVisiable')
       left: 0;
       padding-top: 94px;
       height: 100%;
+      z-index: 99;
 
       > h2 {
         margin-bottom: 4px;
