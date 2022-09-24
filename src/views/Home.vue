@@ -5,39 +5,134 @@ import TopNav from '@/components/TopNav.vue'
 
 <template>
   <div>
-    <TopNav :canToggleAside="false" />
-    <div class="banner">
-      <h1>CC UI</h1>
-      <h2>基于 Vue3, 面向开发者的组件库</h2>
-      <div class="actions">
-        <a href="https://github.com/IfanTsai/vue-cc-ui">GitHub</a> |
-        <router-link to="/doc">Start</router-link>
+    <div class="topnav-and-banner">
+      <TopNav :canToggleAside="false" />
+      <div class="banner">
+        <h1>CC UI</h1>
+        <h2>基于 Vue3, 面向开发者的组件库</h2>
+        <div class="actions">
+          <a href="https://github.com/IfanTsai/vue-cc-ui">GitHub</a>
+          <router-link to="/doc">Start</router-link>
+        </div>
       </div>
+    </div>
+    <div class="features">
+      <ul>
+        <li>
+          <svg class="icon">
+            <use xlink:href="#icon-vue"></use>
+          </svg>
+          <h3>基于 Vue 3</h3>
+          <p>使用 composition API 和 setup 语法糖</p>
+        </li>
+        <li>
+          <svg class="icon">
+            <use xlink:href="#icon-ts"></use>
+          </svg>
+          <h3>基于 Typescript</h3>
+          <p>使用 Typescript 开发</p>
+        </li>
+        <li>
+          <svg class="icon">
+            <use xlink:href="#icon-light"></use>
+          </svg>
+          <h3>代码简洁</h3>
+          <p>每个组件的源代码简洁易懂</p>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.topnav-and-banner {
+  background: linear-gradient(
+    145deg,
+    rgba(242, 234, 236, 1) 0%,
+    rgba(249, 223, 233, 1) 25%,
+    rgba(238, 233, 254, 1) 45%,
+    rgba(230, 241, 254, 1) 70%,
+    rgba(232, 237, 246, 1) 100%
+  );
+  clip-path: ellipse(80% 60% at 50% 40%);
+  transition: clip-path 250ms ease-in-out;
+
+  &:hover {
+    clip-path: ellipse(90% 70% at 50% 40%);
+  }
+}
+
 .banner {
+  color: #636a97;
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
 
   > .actions {
+    $border-radius: 4px;
     padding: 8px 0;
 
     a {
       margin: 0 8px;
-      background: #fff;
+      background: rgba(130, 180, 240, 0.5);
+      color: white;
       display: inline-block;
-      $h: 28px;
-      height: $h;
-      line-height: $h;
-      border-radius: calc($h/2);
-      padding: 0 8px;
+      padding: 6px 20px;
+      border-radius: $border-radius;
+
+      &:hover {
+        text-decoration: none;
+        background: skyblue;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.features {
+  margin: 64px auto;
+  width: 400px;
+
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      width: 400px;
+      margin: 16px 0;
+      display: grid;
+      justify-content: start;
+      align-content: space-between;
+      grid-template-areas:
+        'icon title'
+        'icon text';
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
+
+      > svg {
+        grid-area: icon;
+        width: 64px;
+        height: 64px;
+      }
+
+      > h3 {
+        grid-area: title;
+        font-size: 28px;
+      }
+
+      > p {
+        grid-area: text;
+      }
     }
   }
 }

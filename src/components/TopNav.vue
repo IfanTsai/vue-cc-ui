@@ -18,7 +18,9 @@ const toggleAside = () => {
 <template>
   <div class="top-nav">
     <router-link to="/" class="logo">
-      <img src="@/../public/favicon.ico" alt="logo" />
+      <svg class="icon">
+        <use xlink:href="#icon-cc"></use>
+      </svg>
     </router-link>
     <ul class="menu">
       <li>menu1</li>
@@ -52,7 +54,7 @@ const toggleAside = () => {
 
 <sytle lang="scss" scoped>
 .top-nav {
-  background: rgb(173, 217, 234);
+  color: #636a97;
   display: flex;
   padding: 10px 16px;
   position: fixed;
@@ -66,6 +68,10 @@ const toggleAside = () => {
     max-height: 6em;
     margin-right: auto;
     margin-top: auto;
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   > a:hover {
