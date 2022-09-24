@@ -16,6 +16,25 @@ const router = createRouter({
       component: Doc,
       children: [
         {
+          path: '',
+          redirect: '/doc/intro',
+        },
+        {
+          path: 'intro',
+          name: 'introduction',
+          component: () => import('@/views/Intro.vue'),
+        },
+        {
+          path: 'install',
+          name: 'install',
+          component: () => import('@/views/Install.vue'),
+        },
+        {
+          path: 'get-started',
+          name: 'get-started',
+          component: () => import('@/views/GetStarted.vue'),
+        },
+        {
           path: 'switch',
           name: 'switch',
           component: () => import('@/components/SwitchDemo.vue'),
