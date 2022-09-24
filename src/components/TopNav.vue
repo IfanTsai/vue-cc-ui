@@ -24,7 +24,7 @@ const toggleAside = () => {
       <li>menu1</li>
       <li>menu2</li>
     </ul>
-    <spin v-if="canToggleAside" class="toggleAside" @click="toggleAside">
+    <span v-if="canToggleAside" class="toggleAside" @click="toggleAside">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -46,7 +46,7 @@ const toggleAside = () => {
           d="M17,19H3c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S17.6,19,17,19z"
         ></path>
       </svg>
-    </spin>
+    </span>
   </div>
 </template>
 
@@ -54,7 +54,7 @@ const toggleAside = () => {
 .top-nav {
   background: rgb(173, 217, 234);
   display: flex;
-  padding: 16px;
+  padding: 10px 16px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -63,6 +63,7 @@ const toggleAside = () => {
 
   > .logo {
     max-width: 6em;
+    max-height: 6em;
     margin-right: auto;
     margin-top: auto;
   }
