@@ -22,17 +22,17 @@ const router = createRouter({
         {
           path: 'intro',
           name: 'introduction',
-          component: () => import('@/views/Intro.vue'),
+          component: () => import('@/markdown/intro.md'),
         },
         {
           path: 'install',
           name: 'install',
-          component: () => import('@/views/Install.vue'),
+          component: () => import('@/markdown/install.md'),
         },
         {
           path: 'get-started',
           name: 'get-started',
-          component: () => import('@/views/GetStarted.vue'),
+          component: () => import('@/markdown/get-started.md'),
         },
         {
           path: 'switch',

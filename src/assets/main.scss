@@ -37,3 +37,35 @@ body {
   fill: currentColor;
   overflow: hidden;
 }
+
+.markdown-body {
+  > pre {
+    overflow: auto;
+    padding: 16px;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    color: #fff;
+
+    > code {
+      background: 0 0;
+      font-size: 100%;
+      padding: 0;
+    }
+  }
+
+  a {
+    color: #0366d6;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      background: none !important;
+    }
+  }
+
+  p {
+    margin: 5px 0 10px;
+  }
+}
