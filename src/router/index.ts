@@ -17,6 +17,7 @@ const router = createRouter({
       children: [
         {
           path: '',
+          name: 'doc',
           redirect: '/doc/intro',
         },
         {
@@ -37,22 +38,22 @@ const router = createRouter({
         {
           path: 'switch',
           name: 'switch',
-          component: () => import('@/components/SwitchDemo.vue'),
+          component: () => import('@/views/doc/switch/index.vue'),
         },
         {
           path: 'button',
           name: 'button',
-          component: () => import('@/components/ButtonDemo.vue'),
+          component: () => import('@/views/doc/button/index.vue'),
         },
         {
           path: 'dialog',
           name: 'dialog',
-          component: () => import('@/components/DialogDemo.vue'),
+          component: () => import('@/views/doc/dialog/index.vue'),
         },
         {
           path: 'tabs',
           name: 'tabs',
-          component: () => import('@/components/TabsDemo.vue'),
+          component: () => import('@/views/doc/tabs/index.vue'),
         },
       ],
     },

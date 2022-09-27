@@ -34,6 +34,7 @@ $animate-duration: 250ms;
   border-radius: calc($h / 2);
   position: relative;
   transition: background $animate-duration ease-in-out;
+  cursor: pointer;
 
   > span {
     position: absolute;

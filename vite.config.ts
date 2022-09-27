@@ -1,7 +1,8 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import Markdown from 'vite-plugin-md'
+import markdown from 'vite-plugin-md'
+import preview from './plugins/vue-preview-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
     vue({
       include: [/\.vue$/, /\.md$/],
     }),
-    Markdown({
+    markdown({
       style: {
         baseStyle: 'github',
       },
@@ -23,6 +24,7 @@ export default defineConfig({
         md.use(require('markdown-it-prism'))
       },
     }),
+    preview,
   ],
   resolve: {
     alias: {

@@ -1,6 +1,5 @@
 import Dialog from './Dialog.vue'
 import { createApp, h } from 'vue'
-import AppVue from '@/App.vue'
 
 type Option = {
   title: string
