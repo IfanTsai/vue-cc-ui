@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { computed } from '@vue/reactivity'
-import { onMounted, onUpdated, ref, useSlots, watchEffect } from 'vue'
+import { onMounted, ref, useSlots, watchEffect } from 'vue'
 import Tab from './Tab.vue'
-import TopNav from '../components/TopNav.vue'
 
 const props = defineProps<{
   selected: String

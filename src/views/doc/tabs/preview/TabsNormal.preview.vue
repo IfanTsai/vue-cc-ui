@@ -1,8 +1,8 @@
 <preview>基础示例</preview>
 
 <script setup lang="ts">
-import Tabs from '@/lib/Tabs.vue'
 import Tab from '@/lib/Tab.vue'
+import Tabs from '@/lib/Tabs.vue'
 import { ref } from 'vue'
 
 const selected = ref('tab1')

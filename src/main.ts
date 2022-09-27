@@ -1,6 +1,6 @@
-import 'prismjs/themes/prism.min.css'
-import '@/lib/style/index.scss'
 import '@/assets/main.scss'
+import '@/lib/style/index.scss'
+import 'prismjs/themes/prism.min.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
