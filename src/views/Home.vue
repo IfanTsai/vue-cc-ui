@@ -12,7 +12,7 @@ import TopNav from '@/components/TopNav.vue'
         <h2>基于 Vue3, 面向开发者的组件库</h2>
         <div class="actions">
           <a href="https://github.com/IfanTsai/vue-cc-ui">GitHub</a>
-          <router-link to="/doc">Start</router-link>
+          <router-link to="/doc" class="start">开始使用</router-link>
         </div>
       </div>
     </div>
@@ -23,21 +23,22 @@ import TopNav from '@/components/TopNav.vue'
             <use xlink:href="#icon-vue"></use>
           </svg>
           <h3>基于 Vue 3</h3>
-          <p>使用 composition API 和 setup 语法糖</p>
+          <p>使用最新的 composition API 和 setup 语法糖</p>
         </li>
         <li>
           <svg class="icon">
             <use xlink:href="#icon-ts"></use>
           </svg>
-          <h3>基于 Typescript</h3>
-          <p>使用 Typescript 开发</p>
+          <h3>基于 TypeScript</h3>
+          <p>组件以及示例全部采用 TypeScript 进行书写</p>
         </li>
+
         <li>
           <svg class="icon">
             <use xlink:href="#icon-light"></use>
           </svg>
           <h3>代码简洁</h3>
-          <p>每个组件的源代码简洁易懂</p>
+          <p>每个组件的源代码都简洁易读，方便学习交流</p>
         </li>
       </ul>
     </div>
@@ -72,7 +73,13 @@ import TopNav from '@/components/TopNav.vue'
 
   > .actions {
     $border-radius: 4px;
+    margin-top: 16px;
     padding: 8px 0;
+
+    > .start {
+      background: skyblue;
+      font-weight: bold;
+    }
 
     a {
       margin: 0 8px;
@@ -83,8 +90,8 @@ import TopNav from '@/components/TopNav.vue'
       border-radius: $border-radius;
 
       &:hover {
-        text-decoration: none;
         background: skyblue;
+        text-decoration: none;
         font-weight: bold;
       }
     }
@@ -111,6 +118,7 @@ import TopNav from '@/components/TopNav.vue'
       width: 400px;
       margin: 16px 0;
       display: grid;
+      padding: 0 30px;
       justify-content: start;
       align-content: space-between;
       grid-template-areas:
