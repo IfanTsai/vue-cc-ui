@@ -1,6 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  title: String
+}>()
+</script>
 
-<script>
+<script lang="ts">
 export default {
   name: 'cc-ui-tab',
 }

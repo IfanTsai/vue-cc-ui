@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { computed } from '@vue/reactivity'
 import { onMounted, ref, useSlots, watchEffect } from 'vue'
 import Tab from './Tab.vue'
 
-const props = defineProps<{
+defineProps<{
   selected: String
 }>()
 
@@ -13,6 +12,14 @@ const container = ref<HTMLDivElement>()
 const emit = defineEmits(['update:selected'])
 const slotsDefault = useSlots().default?.()
 const titles = slotsDefault?.map((vnode) => vnode.props?.title)
+
+slotsDefault?.forEach((vnode: any) => {
+  if (vnode.type.name !== Tab.name) {
+    throw new Error('Tabs only accepts Tab as children')
+  }
+})
+
+const selectTab = (title: string) => emit('update:selected', title)
 
 // callback after the component is mounted
 onMounted(() => {
@@ -28,21 +35,6 @@ onMounted(() => {
     indicator.value!.style.left = `${left2 - left1}px`
   })
 })
-
-slotsDefault?.forEach((vnode) => {
-  // @ts-ignore
-  if (vnode.type.name !== Tab.name) {
-    throw new Error('Tabs only accepts Tab as children')
-  }
-})
-
-const currentContent = computed(() =>
-  slotsDefault?.find((vnode) => vnode.props?.title === props.selected)
-)
-
-const selectTab = (title: string) => {
-  emit('update:selected', title)
-}
 </script>
 
 <template>
@@ -61,7 +53,12 @@ const selectTab = (title: string) => {
       <div class="cc-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="cc-tabs-content">
-      <component :is="currentContent" :key="currentContent?.props?.title" />
+      <component
+        v-for="item in slotsDefault"
+        class="cc-tabs-content-item"
+        :class="{ selected: item.props?.title === selected }"
+        :is="item"
+      />
     </div>
   </div>
 </template>
@@ -103,6 +100,14 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
+
+    &-item {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
