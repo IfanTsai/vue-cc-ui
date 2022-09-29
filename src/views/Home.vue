@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 import TopNav from '@/components/TopNav.vue'
+import Icon from '@/lib/Icon.vue'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -19,24 +20,17 @@ import TopNav from '@/components/TopNav.vue'
     <div class="features">
       <ul>
         <li>
-          <svg class="icon">
-            <use xlink:href="#icon-vue"></use>
-          </svg>
+          <Icon name="vue" size="64px"></Icon>
           <h3>基于 Vue 3</h3>
           <p>使用最新的 composition API 和 setup 语法糖</p>
         </li>
         <li>
-          <svg class="icon">
-            <use xlink:href="#icon-ts"></use>
-          </svg>
+          <Icon name="ts" size="64px"></Icon>
           <h3>基于 TypeScript</h3>
           <p>组件以及示例全部采用 TypeScript 进行书写</p>
         </li>
-
         <li>
-          <svg class="icon">
-            <use xlink:href="#icon-light"></use>
-          </svg>
+          <Icon name="light" size="64px"></Icon>
           <h3>代码简洁</h3>
           <p>每个组件的源代码都简洁易读，方便学习交流</p>
         </li>
@@ -129,8 +123,6 @@ import TopNav from '@/components/TopNav.vue'
 
       > svg {
         grid-area: icon;
-        width: 64px;
-        height: 64px;
       }
 
       > h3 {

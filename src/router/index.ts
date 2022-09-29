@@ -55,6 +55,11 @@ const router = createRouter({
           name: 'tabs',
           component: () => import('@/views/doc/tabs/index.vue'),
         },
+        {
+          path: 'icon',
+          name: 'icon',
+          component: () => import('@/views/doc/icon/index.vue'),
+        },
       ],
     },
   ],
