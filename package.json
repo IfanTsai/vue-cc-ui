@@ -1,11 +1,11 @@
 {
-  "name": "vue3-cc-ui",
+  "name": "@ifan_tsai/cc-ui",
   "version": "0.0.1",
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/vue3-cc-ui.umd.js",
-  "module": "dist/lib/vue3-cc-ui.mjs",
+  "main": "dist/lib/cc-ui.umd.js",
+  "module": "dist/lib/cc-ui.mjs",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",

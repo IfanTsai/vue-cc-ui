@@ -73,7 +73,7 @@ const asideVisiable = inject<Ref<boolean>>('asideVisiable')
     }
 
     > aside {
-      background: rgba(187, 92, 216, 0.95);
+      background-color: #fff;
       width: 150px;
       padding: 16px 0;
       position: fixed;
@@ -82,6 +82,7 @@ const asideVisiable = inject<Ref<boolean>>('asideVisiable')
       padding-top: 60px;
       height: 100%;
       z-index: 99;
+      border-right: solid 1px #efeff5;
 
       > h2 {
         margin-bottom: 4px;
@@ -95,8 +96,16 @@ const asideVisiable = inject<Ref<boolean>>('asideVisiable')
             padding: 4px 16px;
             text-decoration: none;
             &.router-link-active {
+              color: rgb(238, 233, 254);
+              font-weight: bold;
               background: skyblue;
             }
+
+            &:hover {
+              background: rgba(130, 180, 240, 0.5);
+            }
+
+            transition: all 250ms;
           }
         }
       }

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Icon from '@/lib/Icon.vue'
 import { inject, type Ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
@@ -18,13 +19,15 @@ const toggleAside = () => {
 <template>
   <div class="top-nav">
     <router-link to="/" class="logo">
-      <svg class="icon">
-        <use xlink:href="#icon-cc"></use>
-      </svg>
+      <Icon name="cc" size="32px"></Icon>
     </router-link>
     <ul class="menu">
-      <li>menu1</li>
-      <li>menu2</li>
+      <li>
+        <router-link to="/">首页</router-link>
+      </li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
     <span v-if="canToggleAside" class="toggleAside" @click="toggleAside">
       <svg
@@ -68,10 +71,6 @@ const toggleAside = () => {
     max-height: 6em;
     margin-right: auto;
     margin-top: auto;
-    > svg {
-      width: 32px;
-      height: 32px;
-    }
   }
 
   > a:hover {

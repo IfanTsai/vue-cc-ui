@@ -37,8 +37,8 @@ export default defineConfig({
     outDir: 'dist/lib',
     lib: {
       entry: resolve(__dirname, 'src/lib/index.ts'),
-      name: 'vue3-cc-ui',
-      fileName: 'vue3-cc-ui',
+      name: 'cc-ui',
+      fileName: 'cc-ui',
     },
     rollupOptions: {
       external: ['vue'],

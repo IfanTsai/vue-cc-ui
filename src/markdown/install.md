@@ -3,13 +3,13 @@
 打开终端运行下列命令：
 
 ```bash
-npm install vue3-cc-ui
+npm install @ifan_tsai/cc-ui
 ```
 
 或
 
 ```bash
-yarn add vue3-cc-ui
+yarn add @ifan_tsai/cc-ui
 ```
 
 <br/>
