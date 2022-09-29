@@ -4,7 +4,7 @@
 然后在你的项目中引入组件库
 
 ```ts
-import { Button, Tabs, Switch, Dialog } from 'vue-cc-ui'
+import { Button, Tabs, Switch, Dialog } from 'vue3-cc-ui'
 ```
 
 就可以使用 CC UI 提供的组件了。
@@ -16,7 +16,7 @@ import { Button, Tabs, Switch, Dialog } from 'vue-cc-ui'
 
 ```html
 <script setup lang="ts">
-import { Button } from 'vue-cc-ui'
+import { Button } from 'vue3-cc-ui'
 </script>
 
 <template>
