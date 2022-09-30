@@ -1,6 +1,5 @@
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import markdown from 'vite-plugin-md'
 import preview from './plugins/vue-preview-plugin'
@@ -32,22 +31,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
-  },
-  build: {
-    outDir: 'dist/lib',
-    lib: {
-      entry: resolve(__dirname, 'src/lib/index.ts'),
-      name: 'cc-ui',
-      fileName: 'cc-ui',
-    },
-    rollupOptions: {
-      external: ['vue'],
-      output: {
-        globals: {
-          vue: 'Vue',
-        },
-      },
-    },
-    target: 'es2015',
   },
 })
