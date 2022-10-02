@@ -1,23 +1,39 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
 import Button from '@/lib/Button.vue'
 import Prism from 'prismjs'
+import { computed, ref } from 'vue'
+import useClipboard from 'vue-clipboard3'
+import { useToast, type ToastProps } from 'vue-toast-notification'
+import 'vue-toast-notification/dist/theme-sugar.css'
 
 const props = defineProps<{
   component: any
 }>()
 
-const html = computed(() => {
-  return Prism.highlight(
-    props.component?.__sourceCode,
-    Prism.languages.html,
-    'html'
-  )
-})
+const sourceCode = props.component?.__sourceCode
+const html = computed(() =>
+  Prism.highlight(sourceCode, Prism.languages.html, 'html')
+)
 
 const codeVisible = ref(false)
 const showCode = () => (codeVisible.value = true)
 const hideCode = () => (codeVisible.value = false)
+
+const { toClipboard } = useClipboard()
+const toast = useToast()
+const toastOption: ToastProps = {
+  position: 'top-right',
+  duration: 2000,
+}
+const copyCode = async () => {
+  try {
+    await toClipboard(sourceCode)
+    toast.success('复制成功', toastOption)
+  } catch (e) {
+    toast.error('复制失败', toastOption)
+    console.error(e)
+  }
+}
 </script>
 
 <template>
@@ -31,6 +47,7 @@ const hideCode = () => (codeVisible.value = false)
       <Button @click="showCode" v-else>查看代码</Button>
     </div>
     <div class="preview-code" v-if="codeVisible">
+      <Button class="copy-btn" @click="copyCode">复制</Button>
       <pre class="language-html" v-html="html"></pre>
     </div>
   </div>
@@ -62,6 +79,13 @@ $border-color: #b9b9b9;
   &-code {
     padding: 8px 16px;
     border-top: 1px dashed $border-color;
+    position: relative;
+
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+    }
 
     > pre {
       line-height: 1.1;
