@@ -12,14 +12,22 @@ const vuePreviewPlugin = {
     }
 
     const path = `.${id.match(/\/src\/views\/doc\/.*\.preview\.vue/)![0]}`
-    const rawCode = fs.readFileSync(path).toString()
-    const previewNode: any = baseParse(rawCode).children.find(
-      (node: any) => node.tag === 'preview'
-    )
-    const title = previewNode.children[0].content
-    const main = correctImportPath(
-      rawCode.split(previewNode.loc.source).join('').trim()
-    )
+    let rawCode = fs.readFileSync(path).toString()
+    let title: string
+
+    try {
+      const previewNode: any = baseParse(rawCode, {}).children.find(
+        (node: any) => node.tag === 'preview'
+      )
+
+      title = previewNode.children[0].content
+      rawCode = rawCode.split(previewNode.loc.source).join('').trim()
+    } catch {
+      title = rawCode.match(/<preview>([\s\S]+)<\/preview>/)![1]
+      rawCode = rawCode.replace(/<preview>([\s\S]+)<\/preview>/, '').trim()
+    }
+
+    const main = correctImportPath(rawCode)
 
     return `export default Component => {
       Component.__sourceCode = ${JSON.stringify(main)}
@@ -44,7 +52,9 @@ const correctImportPath = (sourceCode: string) => {
   // extract import lines
   const importMap: Record<string, string[]> = {}
   importLines.forEach((line) => {
-    const [_, name, path] = line.match(/import\s{\s?(\w+)\s?}\sfrom\s'(.+)'/)!
+    const [_, name, path] = line.match(
+      /import\s{\s?([\w,\s]+)\s?}\sfrom\s'(.+)'/
+    )!
     importMap[path] = importMap[path] ? [...importMap[path], name] : [name]
   })
 
