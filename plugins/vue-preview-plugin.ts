@@ -1,5 +1,5 @@
-import fs from 'fs'
 import { baseParse } from '@vue/compiler-core'
+import fs from 'fs'
 
 const vuePreviewPlugin = {
   name: 'preview',
@@ -17,13 +17,47 @@ const vuePreviewPlugin = {
       (node: any) => node.tag === 'preview'
     )
     const title = previewNode.children[0].content
-    const main = rawCode.split(previewNode.loc.source).join('').trim()
+    const main = correctImportPath(
+      rawCode.split(previewNode.loc.source).join('').trim()
+    )
 
     return `export default Component => {
       Component.__sourceCode = ${JSON.stringify(main)}
       Component.__sourceCodeTitle = ${JSON.stringify(title)}
     }`.trim()
   },
+}
+
+const correctImportPath = (sourceCode: string) => {
+  // replace lib import path with cc-ui path
+  sourceCode = sourceCode.replace(
+    /import\s{?\s?(\w+)\s?}?\sfrom\s'@\/lib[\w'\/\.]+/g,
+    "import { $1 } from '@ifan_tsai/cc-ui'"
+  )
+
+  const lines = sourceCode.split('\n')
+  const importLines = lines.filter((line) => line.startsWith('import'))
+  if (!importLines || importLines.length <= 1) {
+    return sourceCode
+  }
+
+  // extract import lines
+  const importMap: Record<string, string[]> = {}
+  importLines.forEach((line) => {
+    const [_, name, path] = line.match(/import\s{\s?(\w+)\s?}\sfrom\s'(.+)'/)!
+    importMap[path] = importMap[path] ? [...importMap[path], name] : [name]
+  })
+
+  // merge import lines
+  const mergedImportLines = Object.keys(importMap).map(
+    (path) => `import { ${importMap[path].join(', ')} } from '${path}'`
+  )
+
+  const importLinesStartIndex = lines.indexOf(importLines[0])
+  lines.splice(importLinesStartIndex, importLines.length)
+  lines.splice(importLinesStartIndex, 0, ...mergedImportLines)
+
+  return lines.join('\n')
 }
 
 export default vuePreviewPlugin
