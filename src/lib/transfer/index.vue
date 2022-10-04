@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from '@/lib/Button.vue'
+import Button from '@/lib/button/index.vue'
 import type { Data, InnerData } from '@/lib/transfer/types'
 import { toNumber } from '@vue/shared'
 import { computed, ref } from 'vue'

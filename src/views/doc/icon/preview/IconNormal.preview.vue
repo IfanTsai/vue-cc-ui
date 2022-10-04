@@ -1,7 +1,7 @@
 <preview>Icon 基础示例</preview>
 
 <script setup lang="ts">
-import Icon from '@/lib/Icon.vue'
+import Icon from '@/lib/icon/index.vue'
 </script>
 
 <template>

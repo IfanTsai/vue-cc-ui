@@ -1,7 +1,7 @@
 <preview>基础示例</preview>
 
 <script setup lang="ts">
-import Switch from '@/lib/Switch.vue'
+import Switch from '@/lib/switch/index.vue'
 import { ref } from 'vue'
 
 const value = ref(false)

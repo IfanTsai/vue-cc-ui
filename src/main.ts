@@ -1,5 +1,5 @@
 import '@/assets/main.scss'
-import '@/lib/style/index.scss'
+import '@/lib/index.scss'
 import 'prismjs/themes/prism.min.css'
 import { createApp } from 'vue'
 import App from './App.vue'

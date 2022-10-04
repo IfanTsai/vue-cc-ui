@@ -1,8 +1,8 @@
 <preview>代码调用示例</preview>
 
 <script setup lang="ts">
-import Button from '@/lib/Button.vue'
-import { openDialog } from '@/lib/dialog'
+import Button from '@/lib/button/index.vue'
+import { openDialog } from '@/lib/dialog/dialog'
 
 const showDailog = () => {
   openDialog({

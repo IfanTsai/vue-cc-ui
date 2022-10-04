@@ -1,4 +1,4 @@
-<preview>transfer 示例 (支持左右拖拽)</preview>
+<preview>Transfer 示例 (支持左右拖拽)</preview>
 
 <script setup lang="ts">
 import Transfer from '@/lib/transfer/index.vue'

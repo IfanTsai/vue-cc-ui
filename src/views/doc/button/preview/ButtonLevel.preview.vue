@@ -1,7 +1,7 @@
 <preview>不同等级示例</preview>
 
 <script setup lang="ts">
-import Button from '@/lib/Button.vue'
+import Button from '@/lib/button/index.vue'
 </script>
 
 <template>

@@ -1,8 +1,8 @@
 <preview>基础示例</preview>
 
 <script setup lang="ts">
-import Dialog from '@/lib/Dialog.vue'
-import Button from '@/lib/Button.vue'
+import Dialog from '@/lib/dialog/index.vue'
+import Button from '@/lib/button/index.vue'
 import { ref } from 'vue'
 
 const visiable = ref(false)

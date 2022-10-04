@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from '@/lib/Button.vue'
+import Button from '@/lib/button/index.vue'
 import Prism from 'prismjs'
 import { computed, ref } from 'vue'
 import useClipboard from 'vue-clipboard3'

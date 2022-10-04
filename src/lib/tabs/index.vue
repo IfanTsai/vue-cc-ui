@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import Tab from '@/lib/tab/index.vue'
 import { onMounted, ref, useSlots, watchEffect } from 'vue'
-import Tab from './Tab.vue'
 
 defineProps<{
   selected: String

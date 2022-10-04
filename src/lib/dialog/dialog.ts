@@ -1,4 +1,4 @@
-import Dialog from './Dialog.vue'
+import Dialog from '@/lib/dialog/index.vue'
 import { createApp, h } from 'vue'
 
 type Option = {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import TopNav from '@/components/TopNav.vue'
-import Icon from '@/lib/Icon.vue'
+import Icon from '@/lib/icon/index.vue'
 import { RouterLink } from 'vue-router'
 </script>
 
