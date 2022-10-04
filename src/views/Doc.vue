@@ -26,19 +26,22 @@ const asideVisiable = inject<Ref<boolean>>('asideVisiable')
         <h2>组件列表</h2>
         <ol>
           <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
+            <router-link to="/doc/switch">Switch</router-link>
           </li>
           <li>
-            <router-link to="/doc/button">Button 组件</router-link>
+            <router-link to="/doc/button">Button</router-link>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
+            <router-link to="/doc/dialog">Dialog</router-link>
           </li>
           <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
+            <router-link to="/doc/tabs">Tabs</router-link>
           </li>
           <li>
-            <router-link to="/doc/icon">Icon 组件</router-link>
+            <router-link to="/doc/icon">Icon</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/transfer">Transfer</router-link>
           </li>
         </ol>
       </aside>

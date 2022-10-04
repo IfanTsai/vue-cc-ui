@@ -62,6 +62,11 @@ const router = createRouter({
           name: 'icon',
           component: () => import('@/views/doc/icon/index.vue'),
         },
+        {
+          path: 'transfer',
+          name: 'transfer',
+          component: () => import('@/views/doc/transfer/index.vue'),
+        },
       ],
     },
   ],
