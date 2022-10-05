@@ -3,8 +3,26 @@
 
 然后在你的项目中引入组件库和样式
 
+## 完整导入
+
 ```ts
-import { Button, Tabs, Switch, Dialog } from '@ifan_tsai/cc-ui'
+// main.ts
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import ccUI from '@ifan_tsai/cc-ui'
+import '@ifan_tsai/cc-ui/dist/lib/style.css'
+
+const app = createApp(App)
+
+app.use(ccUI)        // cc-ui 在此作为插件安装 
+app.mount('#app')
+```
+
+## 手动导入组件
+
+```ts
+import { CcButton, CcTabs, CcSwitch, CcDialog } from '@ifan_tsai/cc-ui'
 import '@ifan_tsai/cc-ui/dist/lib/style.css'
 ```
 

@@ -1,7 +1,6 @@
-<preview>Transfer 示例 (支持左右拖拽)</preview>
+<preview>基础示例 (支持左右拖拽)</preview>
 
 <script setup lang="ts">
-import Transfer from '@/lib/transfer/index.vue'
 import { ref } from 'vue'
 
 interface InnerData {
@@ -42,5 +41,5 @@ const value = ref<InnerData[]>([])
 </script>
 
 <template>
-  <Transfer v-model="value" :data="data" rightTitle="已选"></Transfer>
+  <cc-transfer v-model="value" :data="data" rightTitle="已选"></cc-transfer>
 </template>

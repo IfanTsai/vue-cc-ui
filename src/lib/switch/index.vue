@@ -1,20 +1,24 @@
 <script setup lang="ts">
 const props = defineProps({
-  value: {
+  modelValue: {
     type: Boolean,
     default: false,
   },
 })
 
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:modelValue'])
 
 const change = () => {
-  emit('update:value', !props.value)
+  emit('update:modelValue', !props.modelValue)
 }
 </script>
 
 <template>
-  <button @click="change" class="cc-switch" :class="{ 'cc-checked': value }">
+  <button
+    @click="change"
+    class="cc-switch"
+    :class="{ 'cc-checked': modelValue }"
+  >
     <span></span>
   </button>
 </template>

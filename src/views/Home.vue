@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TopNav from '@/components/TopNav.vue'
-import Icon from '@/lib/icon/index.vue'
 import { RouterLink } from 'vue-router'
 </script>
 
@@ -20,17 +19,17 @@ import { RouterLink } from 'vue-router'
     <div class="features">
       <ul>
         <li>
-          <Icon name="vue" size="64px"></Icon>
+          <cc-icon name="vue" size="64px"></cc-icon>
           <h3>基于 Vue 3</h3>
           <p>使用最新的 composition API 和 setup 语法糖</p>
         </li>
         <li>
-          <Icon name="ts" size="64px"></Icon>
+          <cc-icon name="ts" size="64px"></cc-icon>
           <h3>基于 TypeScript</h3>
           <p>组件以及示例全部采用 TypeScript 进行书写</p>
         </li>
         <li>
-          <Icon name="light" size="64px"></Icon>
+          <cc-icon name="light" size="64px"></cc-icon>
           <h3>代码简洁</h3>
           <p>每个组件的源代码都简洁易读，方便学习交流</p>
         </li>

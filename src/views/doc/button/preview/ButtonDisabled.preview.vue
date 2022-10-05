@@ -1,12 +1,8 @@
 <preview>disabled 示例</preview>
 
-<script setup lang="ts">
-import Button from '@/lib/button/index.vue'
-</script>
-
 <template>
-  <Button disabled>disabled</Button>
-  <Button theme="button" disabled>disabled</Button>
-  <Button theme="link" disabled>disabled</Button>
-  <Button theme="text" disabled>disabled</Button>
+  <cc-button disabled>disabled</cc-button>
+  <cc-button theme="button" disabled>disabled</cc-button>
+  <cc-button theme="link" disabled>disabled</cc-button>
+  <cc-button theme="text" disabled>disabled</cc-button>
 </template>

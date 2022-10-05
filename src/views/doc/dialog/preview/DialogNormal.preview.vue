@@ -1,8 +1,6 @@
 <preview>基础示例</preview>
 
 <script setup lang="ts">
-import Dialog from '@/lib/dialog/index.vue'
-import Button from '@/lib/button/index.vue'
 import { ref } from 'vue'
 
 const visiable = ref(false)
@@ -13,8 +11,8 @@ const cancel = () => {}
 </script>
 
 <template>
-  <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visiable="visiable" :ok="ok" :cancel="cancel">
+  <cc-button @click="toggle">toggle</cc-button>
+  <cc-dialog v-model:visiable="visiable" :ok="ok" :cancel="cancel">
     <template v-slot:title>
       <h3>Title</h3>
     </template>
@@ -22,5 +20,5 @@ const cancel = () => {}
       <div>line 1</div>
       <div>line 2</div>
     </template>
-  </Dialog>
+  </cc-dialog>
 </template>

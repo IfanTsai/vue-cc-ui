@@ -1,7 +1,6 @@
 <preview>代码调用示例</preview>
 
 <script setup lang="ts">
-import Button from '@/lib/button/index.vue'
 import { openDialog } from '@/lib/dialog/dialog'
 
 const showDailog = () => {
@@ -17,5 +16,5 @@ const showDailog = () => {
 </script>
 
 <template>
-  <Button @click="showDailog">show</Button>
+  <cc-button @click="showDailog">show</cc-button>
 </template>

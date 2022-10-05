@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Icon from '@/lib/icon/index.vue'
 import { inject, type Ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
@@ -19,7 +18,7 @@ const toggleAside = () => {
 <template>
   <div class="top-nav">
     <router-link to="/" class="logo">
-      <Icon name="cc" size="32px"></Icon>
+      <cc-icon name="cc" size="32px"></cc-icon>
     </router-link>
     <ul class="menu">
       <li>

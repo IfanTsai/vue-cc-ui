@@ -1,11 +1,7 @@
-<preview>Icon 基础示例</preview>
-
-<script setup lang="ts">
-import Icon from '@/lib/icon/index.vue'
-</script>
+<preview>基础示例</preview>
 
 <template>
-  <Icon name="vue" />
-  <Icon name="ts" size="32px" />
-  <Icon name="cc" size="64px" />
+  <cc-icon name="vue" />
+  <cc-icon name="ts" size="32px" />
+  <cc-icon name="cc" size="64px" />
 </template>

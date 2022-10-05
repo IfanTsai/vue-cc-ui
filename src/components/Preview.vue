@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Button from '@/lib/button/index.vue'
 import Prism from 'prismjs'
 import { computed, ref } from 'vue'
 import useClipboard from 'vue-clipboard3'
@@ -43,11 +42,11 @@ const copyCode = async () => {
       <component :is="component" />
     </div>
     <div class="preview-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
+      <cc-button @click="hideCode" v-if="codeVisible">隐藏代码</cc-button>
+      <cc-button @click="showCode" v-else>查看代码</cc-button>
     </div>
     <div class="preview-code" v-if="codeVisible">
-      <Button class="copy-btn" @click="copyCode">复制</Button>
+      <cc-button class="copy-btn" @click="copyCode">复制</cc-button>
       <pre class="language-html" v-html="html"></pre>
     </div>
   </div>
