@@ -34,6 +34,16 @@ const docMenus: DocMenu = {
       component: () => import('@/views/doc/button/index.vue'),
     },
     {
+      path: 'input',
+      name: 'Input',
+      component: () => import('@/views/doc/input/index.vue'),
+    },
+    {
+      path: 'icon',
+      name: 'Icon',
+      component: () => import('@/views/doc/icon/index.vue'),
+    },
+    {
       path: 'dialog',
       name: 'Dialog',
       component: () => import('@/views/doc/dialog/index.vue'),
@@ -43,11 +53,7 @@ const docMenus: DocMenu = {
       name: 'Tabs',
       component: () => import('@/views/doc/tabs/index.vue'),
     },
-    {
-      path: 'icon',
-      name: 'Icon',
-      component: () => import('@/views/doc/icon/index.vue'),
-    },
+
     {
       path: 'transfer',
       name: 'Transfer',
