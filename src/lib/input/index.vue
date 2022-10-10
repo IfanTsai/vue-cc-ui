@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import Icon from '@/lib/icon/index.vue'
-import 'https://at.alicdn.com/t/c/font_3669930_d8oqpf5u1ol.js'
 import { computed, onMounted, ref, useSlots } from 'vue'
+
+import 'https://at.alicdn.com/t/c/font_3669930_d8oqpf5u1ol.js'
 
 const slots = useSlots()
 
 const props = defineProps({
   modelValue: {
-    type: String,
+    type: [String, Number],
     default: '',
   },
   type: {
@@ -26,6 +27,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  center: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -41,6 +46,7 @@ const inputClasses = computed(() => {
   const { disabled } = props
   return {
     [`cc-input-disabled`]: disabled,
+    [`cc-input-center`]: props.center,
   }
 })
 
@@ -172,6 +178,10 @@ $input-prefix-suffix-padding: 6px 10px;
     &::placeholder {
       color: $input-color-disabled;
     }
+  }
+
+  &-center {
+    text-align: center;
   }
 
   &-icon-suffix {

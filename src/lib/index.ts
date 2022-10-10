@@ -3,6 +3,7 @@ import CcButton from './button/index.vue'
 import { openDialog } from './dialog/dialog'
 import CcDialog from './dialog/index.vue'
 import CcIcon from './icon/index.vue'
+import CcInputNumber from './input-number/index.vue'
 import CcInput from './input/index.vue'
 import CcSwitch from './switch/index.vue'
 import CcTab from './tab/index.vue'
@@ -22,6 +23,7 @@ const componentMap: ComponentMap = {
   CcIcon,
   CcTransfer,
   CcInput,
+  CcInputNumber,
 }
 
 export {
@@ -33,6 +35,7 @@ export {
   CcIcon,
   CcTransfer,
   CcInput,
+  CcInputNumber,
   openDialog,
 }
 

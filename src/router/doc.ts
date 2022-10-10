@@ -39,6 +39,11 @@ const docMenus: DocMenu = {
       component: () => import('@/views/doc/input/index.vue'),
     },
     {
+      path: 'input-number',
+      name: 'Input Number',
+      component: () => import('@/views/doc/input-number/index.vue'),
+    },
+    {
       path: 'icon',
       name: 'Icon',
       component: () => import('@/views/doc/icon/index.vue'),
