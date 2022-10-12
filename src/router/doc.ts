@@ -44,6 +44,11 @@ const docMenus: DocMenu = {
       component: () => import('@/views/doc/input-number/index.vue'),
     },
     {
+      path: 'radio',
+      name: 'Radio',
+      component: () => import('@/views/doc/radio/index.vue'),
+    },
+    {
       path: 'icon',
       name: 'Icon',
       component: () => import('@/views/doc/icon/index.vue'),

@@ -5,6 +5,8 @@ import CcDialog from './dialog/index.vue'
 import CcIcon from './icon/index.vue'
 import CcInputNumber from './input-number/index.vue'
 import CcInput from './input/index.vue'
+import CcRadioGroup from './radio-group/index.vue'
+import CcRadio from './radio/index.vue'
 import CcSwitch from './switch/index.vue'
 import CcTab from './tab/index.vue'
 import CcTabs from './tabs/index.vue'
@@ -24,6 +26,8 @@ const componentMap: ComponentMap = {
   CcTransfer,
   CcInput,
   CcInputNumber,
+  CcRadio,
+  CcRadioGroup,
 }
 
 export {
@@ -36,6 +40,8 @@ export {
   CcTransfer,
   CcInput,
   CcInputNumber,
+  CcRadio,
+  CcRadioGroup,
   openDialog,
 }
 
