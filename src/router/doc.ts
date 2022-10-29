@@ -49,6 +49,11 @@ const docMenus: DocMenu = {
       component: () => import('@/views/doc/radio/index.vue'),
     },
     {
+      path: 'checkbox',
+      name: 'Checkbox',
+      component: () => import('@/views/doc/checkbox/index.vue'),
+    },
+    {
       path: 'icon',
       name: 'Icon',
       component: () => import('@/views/doc/icon/index.vue'),

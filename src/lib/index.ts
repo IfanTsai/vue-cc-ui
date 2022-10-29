@@ -1,5 +1,7 @@
 import type { App, Component } from 'vue'
 import CcButton from './button/index.vue'
+import CcCheckboxGroup from './checkbox-group/index.vue'
+import CcCheckbox from './checkbox/index.vue'
 import { openDialog } from './dialog/dialog'
 import CcDialog from './dialog/index.vue'
 import CcIcon from './icon/index.vue'
@@ -28,6 +30,8 @@ const componentMap: ComponentMap = {
   CcInputNumber,
   CcRadio,
   CcRadioGroup,
+  CcCheckbox,
+  CcCheckboxGroup,
 }
 
 export {
@@ -42,6 +46,8 @@ export {
   CcInputNumber,
   CcRadio,
   CcRadioGroup,
+  CcCheckbox,
+  CcCheckboxGroup,
   openDialog,
 }
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Checkbox from '@/lib/checkbox/index.vue'
 import type { InnerData } from '@/lib/transfer/types'
 
 const props = defineProps<{
@@ -35,16 +36,13 @@ const selectItem = (data: InnerData, checked: boolean) => {
 <template>
   <div class="cc-transfer-main-box" @dragover.prevent>
     <div class="cc-transfer-main-box-title">
-      <input
-        type="checkbox"
-        :id="'__cc_transfer_checkbox_' + leftOrRight"
+      <Checkbox
+        :label="title"
         v-model="selectedAll"
         :disabled="dataList?.filter((item) => !item.disabled).length === 0"
         @click="selectAll(($event.target as HTMLInputElement).checked)"
-      />
-      <label :for="'__cc_transfer_checkbox_' + leftOrRight">
-        {{ title }}
-      </label>
+      >
+      </Checkbox>
     </div>
 
     <div class="cc-transfer-main-box-data-list">
@@ -56,16 +54,12 @@ const selectItem = (data: InnerData, checked: boolean) => {
         :draggable="!item.disabled"
         @dragstart="emit('dragItem', item)"
       >
-        <input
-          type="checkbox"
-          :disabled="item.disabled"
-          :id="'__cc_transfer_checkbox_' + item.id"
+        <Checkbox
+          :label="item.label"
           v-model="item.checkd"
+          :disabled="item.disabled"
           @click="selectItem(item, ($event.target as HTMLInputElement).checked)"
-        />
-        <label :for="'__cc_transfer_checkbox_' + item.id">
-          {{ item.label }}
-        </label>
+        ></Checkbox>
       </div>
     </div>
   </div>
